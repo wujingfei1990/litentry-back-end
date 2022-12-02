@@ -55,5 +55,6 @@ export default {
         allowHeaders: [],//string 数组 Access-Control-Allow-Headers
     },
 
+
 }
 

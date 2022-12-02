@@ -15,7 +15,7 @@ const app = new koa();
 app.use(errorHanler)
 
 // 处理跨域
-app.use(cors(config.cors))
+app.use(cors())
 
 // 安全，去除一些明显的安全信息
 // token 验证
