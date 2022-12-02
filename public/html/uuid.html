@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>h5+app获取唯一标识</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1, maximum-scale=1">
+	</head>
+	<body>
+		<script type="text/javascript">
+			// H5 plus事件处理
+			function getDeviceUuid() {
+				var mainActivity = plus.android.runtimeMainActivity();
+				var Settings = plus.android.importClass("android.provider.Settings");
+				document.write("设备唯一标识为：" + Settings.Secure.getString(mainActivity.getContentResolver(), Settings.Secure.ANDROID_ID));
+			}
+			
+			if (window.plus) {
+				getDeviceUuid();
+			} else {
+				document.addEventListener('plusready', getDeviceUuid, false);
+			}
+			
+		</script>
+	</body>
+</html>
+

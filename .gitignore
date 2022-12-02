@@ -1,0 +1,7 @@
+/log
+/node_modules
+/public/upload
+/public/.DS_Store
+newrelic_agent.log
+yarn-error.log
+.DS_Store

@@ -1,0 +1,44 @@
+{
+    "appenders": {
+        "ctxerrors": {
+            "type": "dateFile",
+            "filename": "log/ctx-errors.log",
+            "pattern": "-yyyy-MM-dd"
+        },
+        "apperrors": {
+            "type": "dateFile",
+            "filename": "log/app-errors.log",
+            "pattern": "-yyyy-MM-dd"
+        },
+        "errorFile": {
+            "type": "file",
+            "filename": "log/errors.log"
+        },
+        "errors": {
+            "type": "logLevelFilter",
+            "level": "ERROR",
+            "appender": "errorFile"
+        }
+    },
+    "categories": {
+        "default": {
+            "appenders": [
+                "ctxerrors",
+                "apperrors"
+            ],
+            "level": "ERROR"
+        },
+        "ctx": {
+            "appenders": [
+                "ctxerrors"
+            ],
+            "level": "ERROR"
+        },
+        "app": {
+            "appenders": [
+                "apperrors"
+            ],
+            "level": "ERROR"
+        }
+    }
+}
